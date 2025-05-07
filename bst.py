@@ -29,6 +29,22 @@ class BinarySearchTree:
         else:
             return self.search(node.right, key)
 
+    def minimum(self, node):
+        if node is None:
+            return None
+        if node.left is None:
+            return node
+        else:
+            return self.minimum(node.left)
+
+    def maximum(self, node):
+        if node is None:
+            return None
+        if node.right is None:
+            return node
+        else:
+            return self.maximum(node.right)
+
 
 # Manually creating dummy nodes for testing
 bst = BinarySearchTree()
